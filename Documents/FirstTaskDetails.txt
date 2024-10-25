@@ -1,0 +1,15 @@
+Inicialmente foi criado um repositório no GitHub e foram adicionados todos os membros do grupo, assim como o professor.
+
+De seguida foi realizado um "Clone" do repositório do professor por um aluno escolhido, sendo que esse o enviou para o repositório onde os outros membros se situam.
+
+----O Método escolhido:
+Optamos por escolher uma versão parecida ao "GitFlow", em que iremos ter "Branches" de "Features", de "Developments" e a "Main", removendo assim o "Release".
+
+Devido ao concelho do professor decidimos que uma pessoa tinha que construir um "Controller" inteiro e assim seguiria as boas práticas "Agile", tendo isso em conta neste trabalho, decidimos que um membro ia ficar encarregue do relatório enquanto que os outros 3 membros ficariam com os 3 "Controllers". Nas próximas tarefas caso seja necessário seguir este método, iremos trocar a pessoa que fica encarregue do relatório para dar oportunidades a todos.
+
+----Outros Métodos pensados:
+O "Gitflow" trata de desenvolver nas "Features" individuais após estarem aprovadas, elas farão "Merge" com a "Branch Development", assim quando um maior número de "Features" tiverem sido acomuladas na "Development" é criado uma "Branche" chamada "Release" que irá fazer "Deploy" para ambientes mais elevados.
+
+O método "Trunk" é muito arriscado pois iríamos trabalhar diretamente na "Main" e por isso decidimos não o utilizar.
+
+O método "GitHubFlow" na qual apenas iríamos trabalhar com "Features" e após terminar iríamos fazer "Merge" com a "Main", sendo que não achamos que esta seria a melhor abordagem.
