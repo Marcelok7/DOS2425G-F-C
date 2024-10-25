@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using TMS.Models;
+using System.Linq;
 
 namespace TMS.Controller;
 
@@ -16,31 +17,97 @@ public class TasksController : ControllerBase
             Title = "Bug reported - fix",
             Description = "A bug was detected in Service X",
             IsCompleted = false,
-            DueDate = DateTime.Now.AddDays(2)
+            DueDate = DateTime.Now.AddDays(2),
+            Priority = "High",
+            Assignee = "John Doe"
         },
         new TaskItem
         {
             Id = 2,
             TicketNumber = "AB-352",
             Title = "New Functionality - use C#",
-            Description = "It's necessary use .net core in these lessons",
+            Description = "It's necessary to use .NET Core in these lessons",
             IsCompleted = true,
-            DueDate = DateTime.Now.AddDays(-1)
+            DueDate = DateTime.Now.AddDays(-1),
+            Priority = "Medium",
+            Assignee = "Jane Smith"
         },
         new TaskItem
         {
             Id = 3,
             TicketNumber = "AA-9855",
-            Title = "Improvements ",
+            Title = "Improvements",
             Description = "Create new stories to implement new features",
             IsCompleted = false,
-            DueDate = DateTime.Now.AddDays(5)
+            DueDate = DateTime.Now.AddDays(5),
+            Priority = "Low",
+            Assignee = "Alice Brown"
         }
     };
-    
+
     [HttpGet]
-    public IActionResult GetAllTasks()
+    public IActionResult GetTasks()
     {
         return Ok(tasks);
+    }
+
+    [HttpGet("{id}")]
+    public IActionResult GetTask(int id)
+    {
+        var task = tasks.FirstOrDefault(t => t.Id == id);
+        if (task == null)
+        {
+            return NotFound();
+        }
+        return Ok(task);
+    }
+
+    [HttpPost]
+    public IActionResult CreateTask([FromBody] TaskItem task)
+    {
+        if (task == null)
+        {
+            return BadRequest();
+        }
+        task.Id = tasks.Max(t => t.Id) + 1;
+        tasks.Add(task);
+        return CreatedAtAction(nameof(GetTask), new { id = task.Id }, task);
+    }
+
+    [HttpPut]
+    public IActionResult UpdateTask([FromBody] TaskItem updatedTask)
+    {
+        if (updatedTask == null || updatedTask.Id == 0)
+        {
+            return BadRequest();
+        }
+
+        var existingTask = tasks.FirstOrDefault(t => t.Id == updatedTask.Id);
+        if (existingTask == null)
+        {
+            return NotFound();
+        }
+
+        existingTask.TicketNumber = updatedTask.TicketNumber;
+        existingTask.Title = updatedTask.Title;
+        existingTask.Description = updatedTask.Description;
+        existingTask.IsCompleted = updatedTask.IsCompleted;
+        existingTask.DueDate = updatedTask.DueDate;
+        existingTask.Priority = updatedTask.Priority;
+        existingTask.Assignee = updatedTask.Assignee;
+
+        return NoContent();
+    }
+
+    [HttpDelete("{id}")]
+    public IActionResult DeleteTask(int id)
+    {
+        var task = tasks.FirstOrDefault(t => t.Id == id);
+        if (task == null)
+        {
+            return NotFound();
+        }
+        tasks.Remove(task);
+        return NoContent();
     }
 }
