@@ -1,14 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\maki_\\Desktop\\DOS2425G-F-C\\Task_Management_System\\",
+  "WorkspaceRootPath": "C:\\Programa\u00E7\u00E3o\\ProjetosEscola\\DOS2425G-F-C\\Task_Management_System\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BEBC2D76-CD38-4191-A0EE-ADBAE833179A}|TMS\\TMS.csproj|c:\\users\\maki_\\desktop\\dos2425g-f-c\\task_management_system\\tms\\controller\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BEBC2D76-CD38-4191-A0EE-ADBAE833179A}|TMS\\TMS.csproj|solutionrelative:tms\\controller\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BEBC2D76-CD38-4191-A0EE-ADBAE833179A}|TMS\\TMS.csproj|c:\\programa\u00E7\u00E3o\\projetosescola\\dos2425g-f-c\\task_management_system\\tms\\models\\comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BEBC2D76-CD38-4191-A0EE-ADBAE833179A}|TMS\\TMS.csproj|solutionrelative:tms\\models\\comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BEBC2D76-CD38-4191-A0EE-ADBAE833179A}|TMS\\TMS.csproj|c:\\users\\maki_\\desktop\\dos2425g-f-c\\task_management_system\\tms\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BEBC2D76-CD38-4191-A0EE-ADBAE833179A}|TMS\\TMS.csproj|solutionrelative:tms\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BEBC2D76-CD38-4191-A0EE-ADBAE833179A}|TMS\\TMS.csproj|c:\\programa\u00E7\u00E3o\\projetosescola\\dos2425g-f-c\\task_management_system\\tms\\controller\\commentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BEBC2D76-CD38-4191-A0EE-ADBAE833179A}|TMS\\TMS.csproj|solutionrelative:tms\\controller\\commentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BEBC2D76-CD38-4191-A0EE-ADBAE833179A}|TMS\\TMS.csproj|c:\\programa\u00E7\u00E3o\\projetosescola\\dos2425g-f-c\\task_management_system\\tms\\models\\task.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BEBC2D76-CD38-4191-A0EE-ADBAE833179A}|TMS\\TMS.csproj|solutionrelative:tms\\models\\task.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,32 +22,45 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\maki_\\Desktop\\DOS2425G-F-C\\Task_Management_System\\TMS\\Models\\User.cs",
-              "RelativeDocumentMoniker": "TMS\\Models\\User.cs",
-              "ToolTip": "C:\\Users\\maki_\\Desktop\\DOS2425G-F-C\\Task_Management_System\\TMS\\Models\\User.cs",
-              "RelativeToolTip": "TMS\\Models\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "Comment.cs",
+              "DocumentMoniker": "C:\\Programa\u00E7\u00E3o\\ProjetosEscola\\DOS2425G-F-C\\Task_Management_System\\TMS\\Models\\Comment.cs",
+              "RelativeDocumentMoniker": "TMS\\Models\\Comment.cs",
+              "ToolTip": "C:\\Programa\u00E7\u00E3o\\ProjetosEscola\\DOS2425G-F-C\\Task_Management_System\\TMS\\Models\\Comment.cs",
+              "RelativeToolTip": "TMS\\Models\\Comment.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-25T19:27:56.631Z",
+              "WhenOpened": "2024-10-30T23:30:38.646Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\Users\\maki_\\Desktop\\DOS2425G-F-C\\Task_Management_System\\TMS\\Controller\\UserController.cs",
-              "RelativeDocumentMoniker": "TMS\\Controller\\UserController.cs",
-              "ToolTip": "C:\\Users\\maki_\\Desktop\\DOS2425G-F-C\\Task_Management_System\\TMS\\Controller\\UserController.cs",
-              "RelativeToolTip": "TMS\\Controller\\UserController.cs",
-              "ViewState": "AgIAADgAAADAZmZmZmYqwCoAAABCAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "CommentController.cs",
+              "DocumentMoniker": "C:\\Programa\u00E7\u00E3o\\ProjetosEscola\\DOS2425G-F-C\\Task_Management_System\\TMS\\Controller\\CommentController.cs",
+              "RelativeDocumentMoniker": "TMS\\Controller\\CommentController.cs",
+              "ToolTip": "C:\\Programa\u00E7\u00E3o\\ProjetosEscola\\DOS2425G-F-C\\Task_Management_System\\TMS\\Controller\\CommentController.cs",
+              "RelativeToolTip": "TMS\\Controller\\CommentController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-25T19:27:38.17Z",
+              "WhenOpened": "2024-10-30T23:27:56.251Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Task.cs",
+              "DocumentMoniker": "C:\\Programa\u00E7\u00E3o\\ProjetosEscola\\DOS2425G-F-C\\Task_Management_System\\TMS\\Models\\Task.cs",
+              "RelativeDocumentMoniker": "TMS\\Models\\Task.cs",
+              "ToolTip": "C:\\Programa\u00E7\u00E3o\\ProjetosEscola\\DOS2425G-F-C\\Task_Management_System\\TMS\\Models\\Task.cs",
+              "RelativeToolTip": "TMS\\Models\\Task.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-25T20:59:19.532Z",
               "EditorCaption": ""
             }
           ]

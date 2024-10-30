@@ -460,19 +460,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\maki_\\.nuget\\packages\\": {}
+    "C:\\Users\\PedroGonçalves\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\maki_\\Desktop\\DOS2425G-F-C\\Task_Management_System\\TMS\\TMS.csproj",
+      "projectUniqueName": "C:\\Programação\\ProjetosEscola\\DOS2425G-F-C\\Task_Management_System\\TMS\\TMS.csproj",
       "projectName": "TMS",
-      "projectPath": "C:\\Users\\maki_\\Desktop\\DOS2425G-F-C\\Task_Management_System\\TMS\\TMS.csproj",
-      "packagesPath": "C:\\Users\\maki_\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\maki_\\Desktop\\DOS2425G-F-C\\Task_Management_System\\TMS\\obj\\",
+      "projectPath": "C:\\Programação\\ProjetosEscola\\DOS2425G-F-C\\Task_Management_System\\TMS\\TMS.csproj",
+      "packagesPath": "C:\\Users\\PedroGonçalves\\.nuget\\packages\\",
+      "outputPath": "C:\\Programação\\ProjetosEscola\\DOS2425G-F-C\\Task_Management_System\\TMS\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\maki_\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\PedroGonçalves\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
