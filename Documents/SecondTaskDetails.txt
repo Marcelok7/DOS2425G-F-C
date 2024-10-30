@@ -1,0 +1,22 @@
+Inicialmente estavam a ocorrer problemas com o Git, mas com a ajuda do professor as coisas foram resolvidas.
+
+----Solução do problema em cima:
+Foi realizado a eliminação da "Branch" do 1231546 e a criação de uma outra a seguir para a limpeza da "Branch Main".
+
+Foi criado uma "Branch Quality" para assim haver uma melhor organização no Git.
+
+----Tarefas distribuídas:
+O 1231546 ficou encarregue de fazer o Desenvolvimento da API Project;
+O 1231547 ficou encarregue de fazer o Desenvolvimento da API User;
+O 1231551 ficou encarregue de fazer o Desenvolvimento da API Comments.
+O 1231752 ficou encarregue de fazer o Desenvolvimento da API Task;
+
+As tarefas assim foram distribuídas, pois desta forma todos os elementos puderam trabalhar em partes diferentes evitando assim conflitos no repositório.
+
+----Alternativa:
+As tarefas podiam ter sido distribuídas da seguinte forma:
+
+Um elemento ficaria com 2 "Models" e um outro elemento ficaria com os outros 2 "Models".
+Um elemento ficaria com 2 "Controllers" e último elemento ficaria com os outros 2 "Controllers".
+
+Desta forma também se conseguiria trabalhar de isoladamente e simultâneamente visto que quem trabalhasse nos "Controllers" saberia o nome das variáveis que iria receber.
