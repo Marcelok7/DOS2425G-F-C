@@ -10,4 +10,6 @@ public class TaskItem
     public DateTime DueDate { get; set; }
     public string Priority { get; set; }
     public string Assignee { get; set; }
+    public int UserId { get; set; } // ID do user associado
+    public List<Comment> comments { get; set; } = new List<Comment>(); // Lista
 }
