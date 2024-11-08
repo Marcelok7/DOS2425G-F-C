@@ -17,6 +17,16 @@ namespace TMS.Controller
                 Email = "joaquim.lano@example.com",
                 FullName = "Joaquim Lano",
                 UserRole = "Admin"
+            },
+
+
+            new User
+            {
+                ID = 1,
+                UserName = "Jonh",
+                Email = "jonh@example.com",
+                FullName = "Jonh Doe",
+                UserRole = "Admin"
             }
         };
 
