@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Task_Management_System/.vs/Task_Management_System/FileContentIndex/4eceab00-f623-4167-ad0b-ad3ef6ef9834.vsidx
 Task_Management_System/.vs/Task_Management_System/FileContentIndex/bcdffbb9-a39c-4375-9220-41bcb6ff70a7.vsidx
 Task_Management_System/.vs/Task_Management_System/FileContentIndex/d88b96c7-e689-4795-ac90-73a6be9adc99.vsidx
@@ -10,3 +11,8 @@ Task_Management_System/.vs/Task_Management_System/CopilotIndices/0.2.1657.32929/
 Task_Management_System/.vs/Task_Management_System/CopilotIndices/0.2.1657.32929/SemanticSymbols.db
 Task_Management_System/.vs/Task_Management_System/CopilotIndices/0.2.1657.32929/SemanticSymbols.db-shm
 Task_Management_System/.vs/Task_Management_System/CopilotIndices/0.2.1657.32929/SemanticSymbols.db-wal
+=======
+Task_Management_System\.vs
+Task_Management_System\TMS\bin
+Task_Management_System\TMS\obj
+>>>>>>> 04730a1c6b98f9d9fd95e6aea29e3c9f75ec04ef
