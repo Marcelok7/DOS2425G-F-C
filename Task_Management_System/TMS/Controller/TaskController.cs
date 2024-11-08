@@ -51,6 +51,7 @@ public class TasksController : ControllerBase
         return Ok(tasks);
     }
 
+    // GET: api/tasks/{id}
     [HttpGet("{id}")]
     public IActionResult GetTask(int id)
     {
@@ -62,6 +63,7 @@ public class TasksController : ControllerBase
         return Ok(task);
     }
 
+    // POST: api/tasks
     [HttpPost]
     public IActionResult CreateTask([FromBody] TaskItem task)
     {
@@ -74,6 +76,7 @@ public class TasksController : ControllerBase
         return CreatedAtAction(nameof(GetTask), new { id = task.Id }, task);
     }
 
+    // PUT: api/tasks/{id}
     [HttpPut]
     public IActionResult UpdateTask([FromBody] TaskItem updatedTask)
     {
@@ -99,6 +102,7 @@ public class TasksController : ControllerBase
         return NoContent();
     }
 
+    // DELETE: api/tasks/{id}
     [HttpDelete("{id}")]
     public IActionResult DeleteTask(int id)
     {
