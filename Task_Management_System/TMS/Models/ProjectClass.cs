@@ -10,5 +10,9 @@
         public string? Description { get; set; } // Public property for description
         public DateOnly? StartDate { get; set; }
         public DateOnly? EndDate { get; set; }
+        //? serve para não teres de popular a lista 
+        public List<Task>? Tasks { get; set; }
+
+      
     }
 }

@@ -28,6 +28,15 @@ namespace TMS.Controller
                 Description = "Tenis",
                 StartDate = DateOnly.FromDateTime(DateTime.UtcNow.Date),
                 EndDate = DateOnly.FromDateTime(DateTime.UtcNow.Date.AddDays(1))
+            },
+
+            new ProjectClass
+            {
+                 Id = 3,
+                Name = "For the Win",
+                Description = "Vólei",
+                StartDate = DateOnly.FromDateTime(DateTime.UtcNow.Date),
+                EndDate = DateOnly.FromDateTime(DateTime.UtcNow.Date.AddDays(1))
             }
         };
 
