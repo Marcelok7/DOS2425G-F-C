@@ -1,0 +1,37 @@
+----Objetivos da quarta sprint:
+
+Instalação do Vagrant e configuração do Vagrantfile, a criação de um projeto Xunit, adicionar as dependências em uma base de dados em memória e a implementação de testes unitários para cada um dos endpoints.
+
+----Como configuramos o Vagrantfile:
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "gusztavvargadr/sql-server"
+  config.vm.box_version = "2019.2102.2409"
+  config.vm.network "forwarded_port", guest: 80, host: 8080
+  config.vm.provider "hyperv" do |vb|
+	vb.gui = true
+	vb.memory = "2048"
+  end
+end
+
+----Como criamos o projeto Xunit:
+
+Para colocarmos a dependência Xunit clicamos com o botão direito na nossa solução e adicionamos um projeto do tipo Xunit.
+Além disso tivemos que instalar as seguintes dependências através do gestor de pacotes Nugget:
+
+Microsoft.EntityFrameworkCore
+Microsoft.EntityFrameworkCore.Relational
+Microsoft.EntityFrameworkCore.Design
+
+----Tarefas distribuídas:
+
+O 1231546 ficou encarregue de fazer a configuração do Vagrantfile e testes aos endpoints da classe Project;
+O 1231547 ficou encarregue de fazer a pesquisa à alternativa ao Vagrant e testes aos endpoints da classe User;
+O 1231551 ficou encarregue de fazer a criação do projeto Xunit e as suas respetivas dependências e testes aos endpoints da classe Comment;
+O 1231752 ficou encarregue de fazer o relatório e testes aos endpoints da classe Task.
+
+As tarefas assim foram distribuídas, pois desta forma todos os elementos puderam trabalhar em partes diferentes evitando assim conflitos no repositório.
+
+----Alternativa:
+
+Docker: Permite criar ambientes isolados usando containers em vez de VMs completas. É mais leve e rápido do que o Vagrant, especialmente para desenvolvimento de software e funciona em qualquer lugar que tenha o Docker instalado.
