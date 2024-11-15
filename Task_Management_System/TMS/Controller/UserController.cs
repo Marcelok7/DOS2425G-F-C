@@ -22,7 +22,7 @@ namespace TMS.Controller
 
             new User
             {
-                ID = 1,
+                ID = 2,
                 UserName = "Jonh",
                 Email = "jonh@example.com",
                 FullName = "Jonh Doe",
