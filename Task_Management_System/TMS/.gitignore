@@ -1,2 +1,5 @@
-/bin/
-/obj/
+/Task_Management_System/.vs/
+/Task_Management_System/TMS/bin/
+/Task_Management_System/TMS/obj/
+/Task_Management_System/XunitTest/bin/
+/Task_Management_System/XunitTest/obj/
