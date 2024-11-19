@@ -125,8 +125,8 @@ namespace XunitTest.ControllerTest
             var existingComment = new Comment
             {
                 Id = 998,
-                Task = new TaskItem{Id = 3},
-                Text = "Comentário ticket JS-1203 - Original"
+                Task = null,
+                Text = "Comentário ticket JS-1203"
             };
             
             controller.CreateComment(existingComment);
@@ -135,7 +135,7 @@ namespace XunitTest.ControllerTest
             var updatedComment = new Comment
             {
                 Id = existentId,
-                Task = new TaskItem { Id = 3 },
+                Task = null,
                 Text = "Comentário ticket JS-1203 - Editado"
             };
 
