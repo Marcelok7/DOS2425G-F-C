@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TMS.Controller;
 using TMS.Models;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace XunitTest.ControllerTest
 {
@@ -116,24 +117,38 @@ namespace XunitTest.ControllerTest
         }
 
         [Fact]
-        public void UpdateComment_ValidRequest_UpdatesCommentAndReturnsOk()
+        public void UpdateComment_ValidRequest_ReturnsOkWithUpdatedComment()
         {
             //Dados
             var controller = new CommentController();
-            var updatedComment = new Comment { Id = 1, Text = "Updated Comment" };
-            int id = 1;
 
-            //Despoletar método
-            var updateComment = controller.UpdateComment(id, updatedComment);
-
-            //Verifica se retornou OK
-            var okResult = Assert.IsType<OkObjectResult>(updateComment);
+            var existingComment = new Comment
+            {
+                Id = 998,
+                Task = new TaskItem{Id = 3},
+                Text = "Comentário ticket JS-1203 - Original"
+            };
             
-            //Verifica se retornou um comentário
-            var returnedComment = Assert.IsType<Comment>(okResult.Value);
+            controller.CreateComment(existingComment);
 
-            //Verifica se tudo foi atualizado corretamente
-            Assert.Equal(updatedComment.Id, returnedComment.Id);
+            int existentId = existingComment.Id;
+            var updatedComment = new Comment
+            {
+                Id = existentId,
+                Task = new TaskItem { Id = 3 },
+                Text = "Comentário ticket JS-1203 - Editado"
+            };
+
+            //Despoleta método
+            var result = controller.UpdateComment(existentId, updatedComment);
+
+            //Verifica se retornou um objeto OK
+            var okResult = Assert.IsType<OkObjectResult>(result);
+            
+            //Verifica se foi retornado um comentário
+            var returnedComment = Assert.IsType<Comment>(okResult.Value);
+            
+            //Verifica se o texto do comentário foi realmente atualizado
             Assert.Equal(updatedComment.Text, returnedComment.Text);
         }
 
