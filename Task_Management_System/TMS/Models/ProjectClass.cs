@@ -13,6 +13,7 @@
         //? serve para não teres de popular a lista 
         public List<Task>? Tasks { get; set; }
 
-      
+        public ProjectClass() { }
     }
 }
+
