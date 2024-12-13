@@ -1,0 +1,32 @@
+Questão 1: 
+
+Qual o tipo de conexão mais segura para trabalho em redes internas?
+Recomendação: Rede Privada (Private Network)
+A conexão mais segura para trabalho em redes internas é o uso de uma Rede Privada. Este tipo de rede oferece os seguintes benefícios:
+
+Isolamento da Rede Externa: A máquina não possui exposição direta à Internet, minimizando riscos de invasões externas.
+Acesso Restrito: Apenas dispositivos confiáveis na mesma rede privada podem se comunicar, garantindo maior controle de acesso.
+Proteção de Dados Sensíveis: Como os dados trafegam apenas dentro da rede interna, a probabilidade de interceptação é reduzida.
+Cenário de Aplicação:
+A Rede Privada é ideal para ambientes de trabalho colaborativo em redes locais, como:
+
+Desenvolvimento em equipe.
+Sistemas internos corporativos.
+Comunicação entre servidores e clientes em uma rede isolada.
+
+
+
+Questão 2: 
+
+Qual o tipo de conexão utilizar em uma máquina virtual para desenvolvimento sem necessidade de acesso à rede/internet?
+Recomendação: Nenhuma Conexão de Rede
+Quando não há necessidade de qualquer acesso à rede ou Internet, a máquina virtual deve ser configurada sem adaptadores de rede. Isso assegura um isolamento completo, protegendo contra:
+
+Riscos de comunicação externa ou interna indesejada.
+Possíveis falhas de segurança decorrentes de conexões desnecessárias.
+Cenário de Aplicação:
+Este tipo de configuração é recomendado para:
+
+Desenvolvimento local totalmente isolado.
+Testes de software que não exigem conectividade externa.
+Simulações que devem ser mantidas em ambientes controlados.
