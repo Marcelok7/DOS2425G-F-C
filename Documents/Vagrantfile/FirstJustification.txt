@@ -1,0 +1,10 @@
+Decidi usar a opção NAT Network, pois, como o professor apresentou e explicou na parte teórica: 
+
+Permite o acesso a redes externas
+Permite o acesso a redes internas
+A VM tem acesso ao Host
+O Host não acede diretamente à VM
+
+Todas estas características são pedidas na config 1, por isso decide usar esta tipologia.
+
+Poderia optar por usar a tipologia Bridged Adapter mas decidi não o fazer porque na Config 1 é indicado que o Host não precisa de aceder à VM diretamente, e usando esta tipologia, o Host teria acesso à VM diretamente, causando um acesso desnecessário.
