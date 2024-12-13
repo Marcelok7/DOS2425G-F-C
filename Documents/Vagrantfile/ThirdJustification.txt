@@ -1,0 +1,10 @@
+Escolha do Método: Modo NAT
+O modo NAT (Network Address Translation) é configurado automaticamente pelo Vagrant como padrão, e suas características atendem perfeitamente aos requisitos:
+
+Permite que a máquina virtual acesse a Internet por meio de um adaptador NAT configurado no VirtualBox.
+Garante que a máquina virtual não seja acessível por outras máquinas (host, rede local ou outras VMs).
+Por que não usar private_network?
+O tipo de rede private_network não é adequado neste caso, pois:
+
+Ele cria uma interface de rede privada que permite ao host acessar a máquina virtual.
+Outras máquinas virtuais no mesmo host também podem acessar essa interface, violando o requisito de isolamento.
