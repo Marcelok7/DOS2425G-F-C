@@ -1,0 +1,8 @@
+A configuração escolhida utiliza uma rede privada (private_network) com IPs fixos para garantir que a máquina de testes e a máquina principal se possam comunicar diretamente, 
+enquanto a máquina de testes permanece isolada da internet e do host. 
+
+A máquina de testes tem o IP 192.168.33.11, enquanto a máquina principal tem o IP 192.168.33.10,
+permitindo a comunicação entre elas. Além disso, a máquina de testes não foi configurada com uma interface NAT, o que assegura que ela não tenha acesso à internet.
+
+Essa configuração de rede privada atende plenamente aos requisitos da Configuração 2, proporcionando o isolamento necessário,
+permitindo apenas a comunicação entre as duas máquinas virtuais e garantindo que a máquina de testes não tenha acesso à internet nem ao host.

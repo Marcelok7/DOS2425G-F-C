@@ -1,0 +1,13 @@
+Vagrant.configure("2") do |config|
+  # Box que será utilizada
+  config.vm.box = "gusztavvargadr/sql-server"
+
+  # Configuração de rede privada com IP fixo para comunicação com a máquina principal
+  config.vm.network "private_network", ip: "192.168.33.11"
+
+  # Configuração específica para VirtualBox
+  config.vm.provider "virtualbox" do |v|
+    v.memory = "1024"
+    v.cpus = 1
+  end
+end
