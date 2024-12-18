@@ -1,0 +1,3 @@
+Escolha do Método: Internal Network
+
+A Internal Network é apropriada porque cria uma rede isolada onde apenas as máquinas virtuais podem se comunicar entre si, sem qualquer visibilidade para o host ou para rede local. Isso garante segurança e isolamento total do tráfego da rede interna. Neste tipo de conexão, também será necessário criar uma interface de rede NAT, pois irá permitir que a VM utilize a conexão do host como gateway, sem permitir acesso externo à VM.
