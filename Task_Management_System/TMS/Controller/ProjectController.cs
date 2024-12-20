@@ -50,7 +50,7 @@ namespace TMS.Controller
             var project = _projects.FirstOrDefault(p => p.Id == id);
             if (project == null) return NotFound();
 
-            project.Name = updatedProject.Name;
+            project.ProjectName = updatedProject.ProjectName;
             project.Description = updatedProject.Description;
             project.StartDate = updatedProject.StartDate;
             project.EndDate = updatedProject.EndDate;
@@ -76,7 +76,7 @@ namespace TMS.Controller
             if (project == null)
                 return NotFound();
 
-            project.Name = updatedProject.Name;
+            project.ProjectName = updatedProject.ProjectName;
             project.Description = updatedProject.Description;
             project.StartDate = updatedProject.StartDate;
             project.EndDate = updatedProject.EndDate;

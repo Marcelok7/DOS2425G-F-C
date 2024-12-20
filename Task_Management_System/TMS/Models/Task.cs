@@ -1,7 +1,10 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace TMS.Models;
 
 public class TaskItem
 {
+    [Key]
     public int Id { get; set; }
     public string TicketNumber { get; set; }
     public string Title { get; set; }
