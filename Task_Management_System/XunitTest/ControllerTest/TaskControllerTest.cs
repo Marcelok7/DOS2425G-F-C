@@ -2,26 +2,23 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TMS.Controller;
+using Xunit;
 using TMS.Models;
 
 namespace XunitTest.ControllerTest
 {
     public class TaskControllerTest
     {
-
         private List<TaskItem> tasks;
         private TaskController controller;
 
         public TaskControllerTest()
         {
             tasks = new List<TaskItem>
-        {
-            new TaskItem { Id = 1, Title = "Task 1", Description = "Description 1", IsCompleted = false },
-            new TaskItem { Id = 2, Title = "Task 2", Description = "Description 2", IsCompleted = true }
-        };
+            {
+                new TaskItem { Id = 1, TicketNumber = "JS-1203", Title = "Bug reported - fix", Description = "A bug was detected in Service X", IsCompleted = false, Priority = "High", Assignee = "John Doe", DueDate = DateTime.Now.AddDays(2) },
+                new TaskItem { Id = 2, TicketNumber = "AB-352", Title = "New Functionality - use C#", Description = "It's necessary to use .NET Core in these lessons", IsCompleted = true, Priority = "Medium", Assignee = "Jane Smith", DueDate = DateTime.Now.AddDays(-1) }
+            };
             controller = new TaskController(tasks);
         }
 
@@ -63,7 +60,16 @@ namespace XunitTest.ControllerTest
         [Fact]
         public void CreateTask_ValidTask_ReturnsCreatedAtAction()
         {
-            var newTask = new TaskItem { Title = "New Task", Description = "New Description", IsCompleted = false };
+            var newTask = new TaskItem
+            {
+                TicketNumber = "JS-1234",
+                Title = "New Task",
+                Description = "New Description",
+                IsCompleted = false,
+                Priority = "High",
+                Assignee = "John Doe",
+                DueDate = DateTime.Now.AddDays(3)
+            };
 
             var result = controller.CreateTask(newTask) as CreatedAtActionResult;
 
@@ -72,8 +78,10 @@ namespace XunitTest.ControllerTest
             Assert.NotNull(result.RouteValues["id"]);
             var createdTask = result.Value as TaskItem;
             Assert.NotNull(createdTask);
+            Assert.Equal("JS-1234", createdTask.TicketNumber);
             Assert.Equal("New Task", createdTask.Title);
-            Assert.Equal(3, createdTask.Id); // assuming new task id is 3
+            Assert.Equal("John Doe", createdTask.Assignee);
+            Assert.Equal("High", createdTask.Priority);
         }
 
         [Fact]
@@ -89,7 +97,7 @@ namespace XunitTest.ControllerTest
         [Fact]
         public void UpdateTask_ValidTask_ReturnsNoContent()
         {
-            var updatedTask = new TaskItem { Id = 1, Title = "Updated Task", Description = "Updated Description", IsCompleted = true };
+            var updatedTask = new TaskItem { Id = 1, TicketNumber = "JS-1203", Title = "Updated Task", Description = "Updated Description", IsCompleted = true, Priority = "High", Assignee = "John Doe", DueDate = DateTime.Now.AddDays(5) };
 
             var result = controller.UpdateTask(updatedTask);
 
@@ -138,19 +146,6 @@ namespace XunitTest.ControllerTest
         }
     }
 
-    // Modelo de TaskItem
-    public class TaskItem
-    {
-        public int Id { get; set; }
-        public string Title { get; set; }
-        public string Description { get; set; }
-        public bool IsCompleted { get; set; }
-        public string TicketNumber { get; set; }
-        public string Priority { get; set; }
-        public string Assignee { get; set; }
-        public DateTime? DueDate { get; set; }
-    }
-
     // Mock de controlador
     public class TaskController : ControllerBase
     {
@@ -197,9 +192,13 @@ namespace XunitTest.ControllerTest
                 return NotFound();
             }
 
+            existingTask.TicketNumber = updatedTask.TicketNumber;
             existingTask.Title = updatedTask.Title;
             existingTask.Description = updatedTask.Description;
             existingTask.IsCompleted = updatedTask.IsCompleted;
+            existingTask.Priority = updatedTask.Priority;
+            existingTask.Assignee = updatedTask.Assignee;
+            existingTask.DueDate = updatedTask.DueDate;
 
             return NoContent();
         }
