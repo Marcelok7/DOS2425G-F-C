@@ -104,7 +104,7 @@ namespace XunitTest.ControllerTest
             };
 
             // Act
-            var result = controller.UpdateProjectById(1, updatedProject);
+            var result = controller.UpdateProject(1, updatedProject);
 
             // Assert
             var actionResult = Assert.IsType<ActionResult<ProjectClass>>(result);
@@ -131,7 +131,7 @@ namespace XunitTest.ControllerTest
             };
 
             // Act
-            var result = controller.UpdateProjectById(99, updatedProject);
+            var result = controller.UpdateProject(99, updatedProject);
 
             // Assert
             var actionResult = Assert.IsType<ActionResult<ProjectClass>>(result);

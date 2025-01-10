@@ -1,0 +1,25 @@
+----Objetivos da sétima sprint:
+
+Gerar um dockerfile e executar o Docker container com uma API
+
+----Passos realizados:
+
+1º Criar o Dockerfile com a configuração efetuada - Define como a imagem do Docker será construída.
+2º dotnet publish - Compila e publica a aplicação em uma pasta de saída.
+3º dotnet publish Task_Management_System.sln -c Release -o ./publish - Publica a solução inteira.
+4º dotnet workload list - Lista os workloads do .NET.
+5º dotnet workload update - Atualiza os workloads para a versão mais recente.
+6º docker build -t task-management-system - Constrói uma imagem Docker a partir do Dockerfile.
+7º docker run -p 8050:8080 task-management-system - Executa o container Docker mapeando a porta 8080 do container para a porta 8050 do host.
+
+----Tarefas distribuídas:
+Todos os membros contribuíram para a realização deste trabalho
+
+-----Alteração do plano:
+Foi necessário comentar este IF "if (app.Environment.IsDevelopment())" para não existir uma distinção de ambientes quando o programa é executado. Assim o Docket funcionou da forma correta.
+Também foi necessário adicionar a seguinte dependência no ficheiro TMS.csproj para funcionar: <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.0" />;
+--Docker
+O docker é uma plataforma de software que permite criar, testar e executar aplicações de forma isolada em ambientes denominados de containers. O seu principal objetivo é fornecer uma forma simples e eficiente de empacotar software e as suas dependências, garantindo assim, que a aplicação seja executada da mesma forma em qualquer ambiente.
+
+--Alternativa ao Docker
+O Podman é uma ferramente bastante semelhante ao Docker. A sua principal diferença é o facto de não exigir um daemon. O Docker funciona com um processo daemon em segundo plano enquanto que o Podman funciona de maneira sem daemon. Um daemon é um programa ou serviço que funciona em segundo plano sem a interação do utilizador.

@@ -69,6 +69,7 @@ namespace TMS.Controller
             return NoContent();
         }
 
+        /*
         [HttpPut("{id}")]
         public ActionResult<ProjectClass> UpdateProjectById(int id, [FromBody] ProjectClass updatedProject)
         {
@@ -82,6 +83,6 @@ namespace TMS.Controller
             project.EndDate = updatedProject.EndDate;
 
             return Ok(project);
-        }
+        }*/
     }
 }
