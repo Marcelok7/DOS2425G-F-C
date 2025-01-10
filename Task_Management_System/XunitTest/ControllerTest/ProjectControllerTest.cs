@@ -13,9 +13,9 @@ namespace XunitTest.ControllerTest
         {
             var mockProjects = new List<ProjectClass>
             {
-                new ProjectClass { Id = 1, Name = "Soccer For Fun", Description = "Futebol", StartDate = DateOnly.FromDateTime(DateTime.UtcNow), EndDate = DateOnly.FromDateTime(DateTime.UtcNow.AddDays(1)) },
-                new ProjectClass { Id = 2, Name = "Just for Fun", Description = "Tenis", StartDate = DateOnly.FromDateTime(DateTime.UtcNow), EndDate = DateOnly.FromDateTime(DateTime.UtcNow.AddDays(1)) },
-                new ProjectClass { Id = 3, Name = "For the Win", Description = "Vólei", StartDate = DateOnly.FromDateTime(DateTime.UtcNow), EndDate = DateOnly.FromDateTime(DateTime.UtcNow.AddDays(1)) }
+                new ProjectClass { Id = 1, ProjectName = "Soccer For Fun", Description = "Futebol", StartDate = DateOnly.FromDateTime(DateTime.UtcNow), EndDate = DateOnly.FromDateTime(DateTime.UtcNow.AddDays(1)) },
+                new ProjectClass { Id = 2, ProjectName = "Just for Fun", Description = "Tenis", StartDate = DateOnly.FromDateTime(DateTime.UtcNow), EndDate = DateOnly.FromDateTime(DateTime.UtcNow.AddDays(1)) },
+                new ProjectClass { Id = 3, ProjectName = "For the Win", Description = "Vólei", StartDate = DateOnly.FromDateTime(DateTime.UtcNow), EndDate = DateOnly.FromDateTime(DateTime.UtcNow.AddDays(1)) }
             };
             return new ProjectController(mockProjects);
         }
@@ -59,7 +59,7 @@ namespace XunitTest.ControllerTest
             var controller = CreateControllerWithMockData();
             var newProject = new ProjectClass
             {
-                Name = "New Project",
+                ProjectName = "New Project",
                 Description = "New Description",
                 StartDate = DateOnly.FromDateTime(DateTime.UtcNow.Date),
                 EndDate = DateOnly.FromDateTime(DateTime.UtcNow.Date.AddDays(10))
@@ -74,7 +74,7 @@ namespace XunitTest.ControllerTest
             var createdProject = Assert.IsType<ProjectClass>(createdAtResult.Value);
 
             Assert.Equal(4, createdProject.Id); // O próximo ID agora será 4
-            Assert.Equal("New Project", createdProject.Name);
+            Assert.Equal("New Project", createdProject.ProjectName);
         }
 
         [Fact]
@@ -97,7 +97,7 @@ namespace XunitTest.ControllerTest
             var controller = CreateControllerWithMockData();
             var updatedProject = new ProjectClass
             {
-                Name = "Updated Project",
+                ProjectName = "Updated Project",
                 Description = "Updated Description",
                 StartDate = DateOnly.FromDateTime(DateTime.UtcNow.Date),
                 EndDate = DateOnly.FromDateTime(DateTime.UtcNow.Date.AddDays(10))
@@ -111,7 +111,7 @@ namespace XunitTest.ControllerTest
             var okResult = Assert.IsType<OkObjectResult>(actionResult.Result);
             var project = Assert.IsType<ProjectClass>(okResult.Value);
 
-            Assert.Equal("Updated Project", project.Name);
+            Assert.Equal("Updated Project", project.ProjectName);
             Assert.Equal("Updated Description", project.Description);
             Assert.Equal(DateOnly.FromDateTime(DateTime.UtcNow.Date), project.StartDate);
             Assert.Equal(DateOnly.FromDateTime(DateTime.UtcNow.Date.AddDays(10)), project.EndDate);
@@ -124,7 +124,7 @@ namespace XunitTest.ControllerTest
             var controller = CreateControllerWithMockData();
             var updatedProject = new ProjectClass
             {
-                Name = "Updated Project",
+                ProjectName = "Updated Project",
                 Description = "Updated Description",
                 StartDate = DateOnly.FromDateTime(DateTime.UtcNow.Date),
                 EndDate = DateOnly.FromDateTime(DateTime.UtcNow.Date.AddDays(10))

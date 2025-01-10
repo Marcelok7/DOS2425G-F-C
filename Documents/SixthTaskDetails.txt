@@ -1,0 +1,27 @@
+----Objetivos da sexta sprint:
+
+Gerar uma estrutura de dados usando o code first na VM Vagrant e adicionar e remover dados via API e verificar as mesmas alterações no SQL Server
+
+----Passos realizados:
+
+-Foi configurado o arquivo appsettings.json com a string de conexão
+-Devido a dificuldades na conexão com o SQL Server na máquina virtual (VM Vagrant), optámos por configurar a base de dados localmente.
+-Para criar o BackEndContext definimos os DbSets para as entidades
+-Ativamos as migrações com os comandos
+-Atualizamos a base de dados
+
+----Tarefas distribuídas:
+
+O 1231547 e 1231546 ficaram encarregues das 2 primeiras tarefas em conjunto na aula visto que estavam aparecer vários problemas.
+O 1231551 e 1231752  ficaram encarregues da execução de testes nas operações de adição e remoção de dados via API
+
+
+-----Alteração do plano:
+Devido a problemas técnicos na configuração da conexão com o SQL Server na máquina virtual (VM Vagrant), foi necessário realizar as operações diretamente em um SQL Server local. Essa decisão garantiu a continuidade do desenvolvimento e testes do projeto.
+
+
+-----Code First:
+O Code First é uma abordagem do Entity Framework que permite criar uma estrutura de base de dados a partir das classes no código. Facilita o desenvolvimento, especialmente em projetos onde o modelo é dinâmico e sujeito a alterações constantes.
+
+----Alternativa
+Utilizamos o appsettings.json para armazenar a connection string, garantindo uma abordagem mais flexível e segura. 
