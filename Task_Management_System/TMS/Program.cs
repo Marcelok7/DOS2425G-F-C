@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
-using TMS.Data;
+using TMS.Models;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,10 +8,6 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
-// Configura o DbContext para usar a string de conexão do appsettings.json
-builder.Services.AddDbContext<BackEndContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 

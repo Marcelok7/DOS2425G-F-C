@@ -4,3 +4,5 @@
 /Task_Management_System/XunitTest/bin/
 /Task_Management_System/XunitTest/obj/
 /Task_Management_System/publish/
+/Task_Management_System/.vagrant/
+/Task_Management_System/TMS/.vagrant/
