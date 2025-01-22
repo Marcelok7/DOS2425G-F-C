@@ -1,0 +1,50 @@
+----Objetivos da sprint:
+
+Criar um ficheiro docker-compose para instanciar dois serviços: Web e DB e configurar o Portainer.
+
+----Passos realizados:
+
+1º Criar o ficheiro docker-compose.yml com a configuração inicial:
+	- Dois serviços: Web e DB
+	- Configuração de variáveis de ambiente e mapeamento de portas
+
+2º Fazer o download da imagem e executar o container do Portainer:
+	docker volume create portainer_data
+	docker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce
+
+3º ----Comandos executados no terminal:
+
+dotnet publish -c Release -o ./publish
+
+docker build -t task-management-system .
+
+docker-compose up
+
+docker volume create portainer_data
+
+docker run -d -p 8000:8000 -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer
+
+
+----Alteração do plano:
+
+	- Ajuste no docker-compose.yml para corrigir erros de configuração inicial.
+	- Foi necessário ajustar o mapeamento de portas e dependências entre os serviços.
+	- Configuração do ambiente de desenvolvimento, adicionar a variável de conexão ao banco de dados no serviço Web.
+	- Baixar e executar diretamente o Portainer
+
+----Tarefas distribuídas:
+Todos os membros participaram ativamente na realização do trabalho, utilizando um único computador para implementar e testar as configurações.
+Sempre que algo dava erro, cada membro voltou ao seu computador para pesquisar possíveis soluções.
+
+----Docker e Portainer:
+
+O Docker permite criar, testar e executar aplicações de forma isolada em containers, garantindo que funcionem em qualquer ambiente.
+
+O Portainer simplifica a gestão de containers, oferecendo uma interface gráfica para executar, monitorizar e configurar containers, volumes e redes.
+
+---- Portainer:
+
+O Portainer fornece uma interface gráfica intuitiva para gerircontainers, imagens, redes, volumes e stacks do Docker, tornando a gestão mais simples do que usar apenas o terminal.
+Permite ver o estado dos containers, consumo de recursos, logs e configurações de redes, além de criar e configurar containers diretamente na interface. 
+As principais vantagens incluem facilidade de uso, monitorização e diagnóstico rápido. 
+Apresenta desvantagens como maior consumo de recursos e limitações de funcionalidades avançadas.
