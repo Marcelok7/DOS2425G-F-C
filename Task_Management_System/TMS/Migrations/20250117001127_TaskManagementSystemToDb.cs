@@ -6,13 +6,13 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace TMS.Migrations
 {
     /// <inheritdoc />
-    public partial class first : Migration
+    public partial class TaskManagementSystemToDb : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Projects",
+                name: "projectClasses",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -24,11 +24,11 @@ namespace TMS.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Projects", x => x.Id);
+                    table.PrimaryKey("PK_projectClasses", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Users",
+                name: "users",
                 columns: table => new
                 {
                     ID = table.Column<int>(type: "int", nullable: false)
@@ -40,11 +40,11 @@ namespace TMS.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Users", x => x.ID);
+                    table.PrimaryKey("PK_users", x => x.ID);
                 });
 
             migrationBuilder.CreateTable(
-                name: "TaskItems",
+                name: "tasks",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -61,22 +61,22 @@ namespace TMS.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_TaskItems", x => x.Id);
+                    table.PrimaryKey("PK_tasks", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_TaskItems_Projects_ProjectClassId",
+                        name: "FK_tasks_projectClasses_ProjectClassId",
                         column: x => x.ProjectClassId,
-                        principalTable: "Projects",
+                        principalTable: "projectClasses",
                         principalColumn: "Id");
                     table.ForeignKey(
-                        name: "FK_TaskItems_Users_UserId",
+                        name: "FK_tasks_users_UserId",
                         column: x => x.UserId,
-                        principalTable: "Users",
+                        principalTable: "users",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Comments",
+                name: "comments",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -87,37 +87,37 @@ namespace TMS.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Comments", x => x.Id);
+                    table.PrimaryKey("PK_comments", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Comments_TaskItems_TaskId",
+                        name: "FK_comments_tasks_TaskId",
                         column: x => x.TaskId,
-                        principalTable: "TaskItems",
+                        principalTable: "tasks",
                         principalColumn: "Id");
                     table.ForeignKey(
-                        name: "FK_Comments_Users_userID",
+                        name: "FK_comments_users_userID",
                         column: x => x.userID,
-                        principalTable: "Users",
+                        principalTable: "users",
                         principalColumn: "ID");
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Comments_TaskId",
-                table: "Comments",
+                name: "IX_comments_TaskId",
+                table: "comments",
                 column: "TaskId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Comments_userID",
-                table: "Comments",
+                name: "IX_comments_userID",
+                table: "comments",
                 column: "userID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_TaskItems_ProjectClassId",
-                table: "TaskItems",
+                name: "IX_tasks_ProjectClassId",
+                table: "tasks",
                 column: "ProjectClassId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_TaskItems_UserId",
-                table: "TaskItems",
+                name: "IX_tasks_UserId",
+                table: "tasks",
                 column: "UserId");
         }
 
@@ -125,16 +125,16 @@ namespace TMS.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Comments");
+                name: "comments");
 
             migrationBuilder.DropTable(
-                name: "TaskItems");
+                name: "tasks");
 
             migrationBuilder.DropTable(
-                name: "Projects");
+                name: "projectClasses");
 
             migrationBuilder.DropTable(
-                name: "Users");
+                name: "users");
         }
     }
 }

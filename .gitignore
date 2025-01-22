@@ -4,3 +4,9 @@
 /Task_Management_System/XunitTest/bin/
 /Task_Management_System/XunitTest/obj/
 /Task_Management_System/publish/
+/Task_Management_System/.vagrant/
+/Task_Management_System/TMS/.vagrant/
+Task_Management_System/TMS/Dockerfile_BACKUP_1640
+Task_Management_System/TMS/Dockerfile_BASE_1640
+Task_Management_System/TMS/Dockerfile_LOCAL_1640
+Task_Management_System/TMS/Dockerfile_REMOTE_1640

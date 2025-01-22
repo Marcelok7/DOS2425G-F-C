@@ -3,20 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using TMS.Data;
+using TMS.Models;
 
 #nullable disable
 
 namespace TMS.Migrations
 {
-    [DbContext(typeof(BackEndContext))]
-    [Migration("20241220220303_first")]
-    partial class first
+    [DbContext(typeof(TaskManagementSystemDBContext))]
+    partial class TaskManagementSystemDBContextModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -48,7 +45,7 @@ namespace TMS.Migrations
 
                     b.HasIndex("userID");
 
-                    b.ToTable("Comments");
+                    b.ToTable("comments");
                 });
 
             modelBuilder.Entity("TMS.Models.ProjectClass", b =>
@@ -73,7 +70,7 @@ namespace TMS.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Projects");
+                    b.ToTable("projectClasses");
                 });
 
             modelBuilder.Entity("TMS.Models.TaskItem", b =>
@@ -122,7 +119,7 @@ namespace TMS.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("TaskItems");
+                    b.ToTable("tasks");
                 });
 
             modelBuilder.Entity("TMS.Models.User", b =>
@@ -151,7 +148,7 @@ namespace TMS.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("Users");
+                    b.ToTable("users");
                 });
 
             modelBuilder.Entity("TMS.Models.Comment", b =>
