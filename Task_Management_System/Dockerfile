@@ -12,13 +12,13 @@ COPY TMS/*.csproj ./TMS/
 COPY XunitTest/*.csproj ./XunitTest/
 
 # Restaurar as dependências da solução
-RUN dotnet restore Task_Management_System.sln
+RUN dotnet restore
 
 # Copiar todos os ficheiros do projeto para a pasta de trabalho do container
 COPY . ./
 
 # Publicar o projeto em modo Release para a pasta de saída
-RUN dotnet publish Task_Management_System.sln -c Release -o /app/publish
+RUN dotnet publish -c Release -o /app/publish
 
 # Etapa de execução
 FROM mcr.microsoft.com/dotnet/aspnet:8.0

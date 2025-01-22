@@ -1,0 +1,7 @@
+.vagrant/
+*.vhdx
+*.iso
+*.log
+node_modules/
+bin/
+obj/
