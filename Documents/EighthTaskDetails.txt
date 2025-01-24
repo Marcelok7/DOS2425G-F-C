@@ -1,0 +1,59 @@
+----Objetivos deste exercício prático:
+Criar um Docker Compose para instanciar diferentes serviços;
+Automatizar a instância de diferentes containers no mesmo projeto;
+Conseguir perceber como utilizar a ferramenta Portainer;
+Entender as diferentes redes existentes na utilização do docker;
+
+----Passos realizados:
+1 - Criar ficheiro docker-compose.yml e colocá-lo na pasta do projeto.
+2 - Certificar que temos um docker file
+3 - Executar na consola o seguinte comando: docker volume create portainer_data
+4 - Não tinha portainer instalado ao inserir este comando ele efetuou a instação: docker run -d -p 8000:8000 -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer 
+5 - Após isso corri novamente o mesmo comando
+6 - Pesquisei http://localhost:9000
+7 - Defini password para o admin
+8 - Acesso ao portal
+
+----Tarefas distribuídas:
+Todos os membros contribuíram para a realização deste trabalho
+
+-----Alteração do plano:
+Por algum motivo a password que definimos para o utilizador admin não estava a ser considerada correta. Então foi necessário executar estes comandos:
+
+docker stop "id-portainer-container"
+docker pull portainer/helper-reset-password
+docker run --rm -v portainer_data:/data portainer/helper-reset-password
+
+Após estas execuções foi nos retornado uma nova palavra-passe para o admin. Fazendo um start à máquina e tentando fazer o login, obtivemos sucesso.
+
+--Portainer
+
+----Tipo de informação que é possível analisar no Portainer
+
+O Portainer permite analisar e gerir o ambiente Docker de forma visual.
+
+Ele dá-nos informações sobre:
+Containers;
+Imagens;
+Volumes;
+Redes;
+Stacks;
+
+---- De que forma se torna mais simples do que a utilização do terminal
+Como todas as interfaces gráficas, a interface gráfica do Postainer facilita a execução das funcionalidades sem a necessidade de inserir comandos e em poucos cliques. Além disso os logs podem ser visualizados diretamente na interface.
+
+---- Vantagens e desvantagens do Portainer
+Vantagens:
+	Usabilidade - A interface é amiga e intuitiva.
+	Produtividade - Reduz o tempo necessário para realizar operações comuns;
+	Centralização - Permite gerir múltiplos ambientes no memso local.
+
+Desvantagens:
+	Curva de Aprendizado - Apesar de algumas funcionalidades serem simples de executar, outras podem ser menos intuitivas;
+	O Portainer é um container extra que consome recursos adicionais do sistema;
+	Limitações na gestão - Algumas opções avançadas do Docker podem não estar disponíveis na interface e precisam de ser efetuadas via terminal.
+	
+
+--Alternativa ao Portainer
+Existe o Rancher que é uma plataforma completa de gestão de containers, voltada especialmente para Kubernetes, mas também suporta Docker. 
+
