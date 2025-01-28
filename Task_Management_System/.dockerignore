@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 **/.classpath
 **/.dockerignore
 **/.env
@@ -28,3 +29,12 @@ README.md
 !.git/config
 !.git/packed-refs
 !.git/refs/heads/**
+=======
+.vagrant/
+*.vhdx
+*.iso
+*.log
+node_modules/
+bin/
+obj/
+>>>>>>> e3266ff64c4fcaf9db093522f1bafb6ba8cbad7c

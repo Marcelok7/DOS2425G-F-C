@@ -1,0 +1,22 @@
+----Objetivos deste exercício prático:
+Configurar a ferramenta Docker
+Ter o Jenkins a comunicar com network onde está a ser executado o Docker
+Perceber palavras-chave da execução do jenkins
+
+----Passos realizados:
+1 - Configuramos o ficheiro docker-compose.yml;
+2 - Executamos o comando docker-compose up -d;
+3 - Acedemos ao Jenkins (http://localhost:8080)
+4 - Criamos e configuramos o ficheiro Jenkinsfile para criar a pipeline utilizando o link do projeto inicial,
+5 - Usamos o comando docker logs Jenkins para obter a password do Jenkins;
+6 - Inserimos a password na página Unlock Jenkins e clicamos no botão Continue;
+7 - Install Suggested plugins;
+8 - Aguardamos que os plugins fossem instalados
+9 - Selecionamos a opção Skip and continue as admin na página Create First Admin User
+10 - Definimos este url: http://localhost:8080/
+11 - Jenkins is ready!
+
+----Tarefas distribuídas:
+Todos os membros contribuíram para a realização deste trabalho
+
+

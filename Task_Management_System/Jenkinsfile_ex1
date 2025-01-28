@@ -1,0 +1,44 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git 'https://bitbucket.org/ctespisep/ctesp_24_25_initial.git'
+            }
+        }
+        stage('Restore') {
+            steps {
+                sh 'dotnet restore'
+            }
+        }
+        stage('Build') {
+            steps {
+                sh 'dotnet build --no-restore'
+            }
+        }
+        stage('Publish') {
+            steps {
+                sh 'dotnet publish -c Release -o publish_output'
+            }
+        }
+        stage('SonarQube Analysis') {
+            steps {
+                withSonarQubeEnv('SonarQube') {
+                    sh 'dotnet-sonarscanner begin /k:"project_key" /d:sonar.host.url=http://sonarqube:9001 /d:sonar.login=$SONARQUBE_TOKEN'
+                    sh 'dotnet build'
+                    sh 'dotnet-sonarscanner end /d:sonar.login=$SONARQUBE_TOKEN'
+                }
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'Pipeline executado com sucesso!'
+        }
+        failure {
+            echo 'Pipeline falhou!'
+        }
+    }
+}
